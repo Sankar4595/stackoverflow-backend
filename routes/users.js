@@ -159,7 +159,7 @@ router.post("/forgetPassword", async (req, res) => {
       let token = await createForgetToken({ id: user._id });
 
       //send mail
-      const url = `https://clone-stackoverflow.netlify.app//reset-password/${token}`;
+      const url = `https://clone-stackoverflow.netlify.app/reset-password/${token}`;
       const name = user.firstName;
       const email = user.email;
       SendResetEmail(email, url, "Reset Your Password", name);
