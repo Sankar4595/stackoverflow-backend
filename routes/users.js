@@ -183,7 +183,7 @@ router.post("/resetPassword", async (req, res) => {
     if (req.headers.authorization) {
       let token = req.headers.authorization.split(" ")[1];
       let data = await jwt.decode(token);
-      console.log(token);
+      // console.log(token);
       let currentTime = Math.floor(+new Date() / 1000);
       if (currentTime < data.exp) {
         let hashedPassword = await HashPassword(req.body.password);
