@@ -1,10 +1,11 @@
 require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+SALT_COUNT = 10;
 
 const HashPassword = async (password) => {
-  let salt = await bcrypt.genSalt(process.env.SALT_COUNT);
-  let hassedPassword = await bcrypt.hash(password, process.env.SALT_COUNT);
+  let salt = await bcrypt.genSalt(SALT_COUNT);
+  let hassedPassword = await bcrypt.hash(password, salt);
   return hassedPassword;
 };
 
