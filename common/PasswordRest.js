@@ -1,5 +1,5 @@
-const nodemailer = require("nodemailer");
 require("dotenv").config();
+const nodemailer = require("nodemailer");
 
 async function SendResetEmail(to, url, text, name) {
   try {
